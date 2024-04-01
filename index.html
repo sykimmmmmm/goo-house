@@ -5,30 +5,184 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo"></div>
-        <div class="nav">
-            <span>home</span>
-            <span>visit</span>
-            <span>exhibitions</span>
-            <span>collection</span>
-            <span>program</span>
-            <div class="etc">
-                
+        <div class="header-bg">
+            <a href="/index.html"><div class="logo"></div></a>
+            <div class="nav">
+                    <li class="dropdown show">
+                        <a href="#none">home</a>
+                    </li>
+                    <li class="dropdown show">
+                        <a href="#none">visit</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#none">information</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown show">
+                        <a href="#none">exhibitions</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#none">permanent</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#none">1F</a></li>
+                                    <li><a href="#none">2F</a></li>
+                                    <li><a href="#none">야외</a></li>
+                                    <li><a href="#none">별관</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">special</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#none">current</a></li>
+                                    <li><a href="#none">Upcoming</a></li>
+                                    <li><a href="#none">Past</a></li>
+                                </ul>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown show">
+                        <a href="#none">collection</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#none">art</a></li>
+                            <li><a href="#none">design</a></li>
+                            <li><a href="#none">book & etc</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown show">
+                        <a href="#none">program</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#none">education</a></li>
+                            <li><a href="#none">event</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown show">…
+                        <ul class="dropdown-menu">
+                            <li><a href="#none">about us</a></li>
+                            <li><a href="#none">notice</a></li>
+                        </ul>
+                    </li>
             </div>
         </div>
+        
     </header>
     <div id="wrapper"></div>
-
+    <div class="spexhi">
+        <h3>특별 기획전</h3>
+        <div class="special-container">
+            <a href="#none">
+                <div class="special-item">
+                    <div class="special-img spimg1"></div>
+                    <div class="special-desc">
+                        <h4>20th 기획전</h4>
+                        <p class="desc-title">Insight of Painting</p>
+                        <span class="desc-subtitle">구하우스 회화컬렉션 살펴보기</span>
+                        <p class="desc-date">2023.11.22~2024.04.30</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#none">
+                <div class="special-item">
+                    <div class="special-img spimg2"></div>
+                    <div class="special-desc">
+                        <h4>21th 기획전</h4>
+                        <p class="desc-title">Beyond Blockchain</p>
+                        <span class="desc-subtitle">웹 3.0 시대의 예술</span>
+                        <p class="desc-date">2024.03.13~2024.06.02</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="collection">
+        <div class="collection-title">
+            <h3>소장품</h3>
+            <a href="#none">더보기</a>
+        </div>
+        <div class="collect-container">
+                <div class="collect-item">
+                    <div class="collect-img climg1"></div>
+                    <div class="collect-desc">
+                        <div class="collect-author">Andy Warhol</div>
+                        <div class="collect-title">Campbell's Soup Black Bean</div>
+                        <div class="collect-year">1968</div>
+                    </div>
+                </div>
+            <div class="collect-item">
+                <div class="collect-img climg2"></div>
+                <div class="collect-desc">
+                    <div class="collect-author">백남준</div>
+                    <div class="collect-title">세기말의 사람</div>
+                    <div class="collect-year">1991</div>
+                </div>
+            </div>
+            <div class="collect-item">
+                <div class="collect-img climg3"></div>
+                <div class="collect-desc">
+                    <div class="collect-author">karel appel</div>
+                    <div class="collect-title">Untitled</div>
+                    <div class="collect-year">1977</div>
+                </div>
+            </div>
+            <div class="collect-item">
+                <div class="collect-img climg4"></div>
+                <div class="collect-desc">
+                    <div class="collect-author">Maggie Taylor</div>
+                    <div class="collect-title">Boys With Thinking Caps</div>
+                    <div class="collect-year">2004</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="operation">
+        <h3>관람 안내</h3>
+        <div class="op-container">
+            <div class="optime">
+                <p>관람 시간</p>
+                <div class="time">
+                    <p>3월 ~ 10월</p>
+                    <span>수 - 금 13:00 – 17:00 (마지막 입장 시간 16:00)</span>
+                    <span>토, 일, 공휴일 10:30 – 18:00 (마지막 입장 시간 17:00)</span>
+                </div>
+                <div class="time">
+                    <p>11월 ~ 2월</p>
+                    <span>수 - 금 13:00 – 17:00 (마지막 입장 시간 16:00)</span>
+                    <span>토, 일, 공휴일 10:30 – 17:00 (마지막 입장 시간 16:00)</span>
+                </div>
+            </div>
+            <div class="operation-img"><i class="fa-regular fa-clock"></i></div>
+            <div class="optime">
+                <p>휴관일</p>
+                <div class="time">
+                    <p>매주 월 - 화 (단, 공휴일인 경우는 개관)</p>
+                    <p>매년 1월 1일, 설날, 추석 당일</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="address">
+            <span>49-12 Munaemi-gil, Seojong-myeon, Yangpyeoeng-gun, Gyeonggi-do, Korea 1</span>
+            <span>2503 　T +82-31-774-7460 　 museum@koohouse.org</span>
+        </div>
+        <div class="social">
+            <a href="#none"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#none"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#none"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#none"><i class="fa-brands fa-blogger"></i></a>
+        </div>
+    </footer>
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="create.js"></script>
     <script src="slide.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
