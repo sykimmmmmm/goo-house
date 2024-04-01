@@ -11,9 +11,7 @@ a{
 /* 헤더 */
 
 header{
-    box-sizing: border-box;
     position: relative;
-    display: flex;
     max-width: 100%;
     width: 100%;
     height: 100px;
@@ -22,13 +20,15 @@ header{
     color: white;
     /* backdrop-filter: blur(5px); */
     z-index: 100;
-    align-items: center;
-    justify-content: space-between;
 
 }
 .header-bg{
+    box-sizing: border-box;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
+    max-width: 1920px;
     top: 0; left: 0;
     width: 100%;
     height: fit-content;
@@ -55,10 +55,6 @@ header{
 .nav a{
     color: white;
 }
-.nav>li{
-    float: none;
-    display: inline-block;
-}
 .dropdown{
     position: relative;
 }
@@ -70,10 +66,8 @@ header{
     display: block;
     visibility: visible;
 }
-ul,li{
-    list-style: none;
-}
 .dropdown-menu{
+    position: absolute;
     display: none;
     visibility: hidden;
 }
