@@ -1,17 +1,18 @@
+const header = document.querySelector('header')
 const nav = document.querySelector('.nav')
-const dropdowns = document.querySelectorAll('.dropdown')
-const dropdownMenus = document.querySelectorAll('.dropdown-menu')
+const dropdowns = nav.querySelectorAll('.dropdown')
 
-// console.log(dropdownMenus)
-// console.log(dropdowns)
-function displaySubmenu(e){
-    console.log(this.children[1])
-    if(this.children[1]){
-        this.children[1].classList.add('show')
-    }
+function displaySub(e){
+    dropdowns.forEach((item)=>{
+        let a = item.nextElementSibling
+        item.nextElementSibling.style.display='none'
+        if(a){
+            if(e.target===item){
+                item.nextElementSibling.style.display='block'
+            }
+        }
+    })
 }
 
 
-dropdowns.forEach((menu)=>{
-    menu.addEventListener('mouseover',displaySubmenu)
-})
+header.addEventListener('mouseover',displaySub)
