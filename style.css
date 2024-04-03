@@ -57,7 +57,7 @@ ul,li{
 footer{
     margin-top: 10vh;
     background-color: #b1b1b1;
-    padding: 10px 2vw;
+    padding: 10px 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,5 +82,14 @@ footer .social i{
     }
     to{
         opacity: 1;
+    }
+}
+
+@keyframes movearrow{
+    from{
+        left: 0;
+    }
+    to{
+        left: 5px;
     }
 }

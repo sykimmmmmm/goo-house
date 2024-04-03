@@ -1,3 +1,6 @@
+body{
+    background-color: antiquewhite;
+}
 header{
     position: relative;
     max-width: 100%;
@@ -30,44 +33,64 @@ header{
     height: 80px;
     cursor: pointer;
 }
-.nav{
+nav{
     display: flex;
-    gap: 10px;
+    gap: 50px;
     text-transform: uppercase;
     font-weight: bold;
+    justify-content: center;
+    align-items: center;
     /* border: 1px solid red; */
 }
-.nav{
+nav{
     font-size: 24px;
-    position: relative;
+    height: 80px;
 }
-.nav a{
+nav a{
     color: white;
 }
-.submenu1{
+nav>li{
+    position: relative;
+}
+nav>li>div{
+    cursor: pointer;
+}
+
+nav>li .submenu{
+    position: absolute;
+    width: 130px;
+    top: 10px;
+    padding: 0;
+    left: 0;
+    display: none;
+    animation: displaymenu 1s forwards;
+    background: rgba(0, 0, 0, .5);
+    border-collapse: collapse;
+    background-clip: border-box;
+}
+.submenu a{
     font-size: 16px;
-    position: absolute;
-    top: 55%;
-    padding: 0;
-    padding-right: 20px;
-    transition: .5s;
-    animation: displaymenu 1s forwards;
-    display: none;
-    /* visibility: hidden; */
 }
-.submenu2{
-    position: absolute;
+nav>li .submenu .submenu2{
+    /* position: absolute; */
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    left: 100%;
-    top: 0;
+    /* left: 100%; */
     padding: 0;
-    transition: .5s;
-    animation: displaymenu 1s forwards;
-    /* visibility: hidden; */
+    top: 10px;
     display: none;
+    animation: displaymenu 1s forwards;
+    text-align: center;
 }
+nav>li:hover .submenu{
+    display: block;
+}
+nav i{
+    position: relative;
+    transition: .3s;
+}
+
+
+
 /* 특별 기획전 안내 */
 .spexhi{
     box-sizing: border-box;
@@ -98,6 +121,7 @@ header{
     width: 500px;
     flex: none;
     box-shadow: 4px 5px 6px rgba(0, 0, 0, .5);
+    background-color: #fff;
 }
 .special-img.spimg1{
     background: url(/imgs/special1.png) no-repeat;
@@ -144,6 +168,7 @@ header{
     justify-content: center;
 }
 .collection-title{
+    position: relative;
     margin-bottom: 10px;
 }
 .collection-title h3{
@@ -151,16 +176,19 @@ header{
     margin: 3rem 0;
     text-align: center;
 }
-.collection-title a{
-    display: flex;
-    justify-content: end;
-    color: #888888;
+.collection-title > a{
+    position: absolute;
+    color: #333;
+    bottom: 0;
+    right: 40px;
 }
 .collect-container{
     /* border: 1px solid red; */
+    position: relative;
     display: flex;
     gap: 40px;
     justify-content: space-around;
+    background-color: rgba(250, 235, 215, 0.199);
 }
 .collect-container .collect-item{
     width: 300px;
@@ -240,4 +268,9 @@ header{
 .operation-img .fa-clock{
     font-size: 15rem;
     color: #aaa;
+}
+
+
+nav>li .submenu2.on{
+    display: block;
 }
