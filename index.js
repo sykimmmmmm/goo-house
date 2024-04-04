@@ -3,6 +3,32 @@ const menus = document.querySelectorAll('.submenu2')
 const header = document.querySelector('.header-bg')
 const submenus = document.querySelectorAll('.submenu')
 const wrapper = document.getElementById('wrapper')
+const menuicon = document.querySelector('.menuicon')
+const navBox = document.querySelector('.navBox')
+const closeBtn = navBox.querySelector('.close-btn')
+const nav = header.querySelectorAll('nav>li ul')
+/** 반응형 서브메뉴 아코디언형식  */
+function openMenu(e){
+    let x = e.target
+    let y = e.target.nextElementSibling
+    const icon = e.target.querySelector('i')
+    console.log(icon)
+    if(x.classList.contains('title')){
+        y.classList.toggle('open')
+        icon.style.transform='rotate(90deg)'
+    }
+    if(x.classList.contains('title')&&!y.classList.contains('open')){
+        icon.style.transform='rotate(0deg)'
+    }
+}
+
+function hideMenu(){
+    navBox.style.display='none'
+}
+
+function openNav(e){
+    navBox.style.display='flex'
+}
 
 /** 메인화면 스와이퍼 이미지 생성 */
 function createImg(){
@@ -15,7 +41,9 @@ function createImg(){
     for(let i =1;i<=10;i++){
         const mainSectSwiperSlide = document.createElement('div')
         mainSectSwiperSlide.className = 'swiper-slide'
-        mainSectSwiperSlide.style.background = `url(/imgs/bg${i}.jpg)`
+        mainSectSwiperSlide.style.background = `url(/imgs/bg${i}.jpg) no-repeat`
+        mainSectSwiperSlide.style.backgroundSize='cover'
+        mainSectSwiperSlide.style.backgroundPosition='center'
         mainSectSwiperWrapper.append(mainSectSwiperSlide)
     }
     mainSectionSwiper.append(mainSectSwiperWrapper,swiperpagination)
@@ -39,17 +67,26 @@ createImg()
 mainSectSwiper()
 const sec1 = document.querySelector('.spexhi')
 
+/** 슬라이더이후 헤더 색 변환  */
 function headerChange(){
     let x = sec1.getBoundingClientRect()
 
     if(x.top<=0){
         header.style.background='rgba(0,0,0,1)' 
+        for(let i of nav){
+            i.style.background='rgba(0,0,0,1)'
+        }
+
     }else{
         header.style.background='rgba(0,0,0,.5)'
+        for(let i of nav){
+            i.style.background=''
+        }
     }
 }
-
-
+menuicon.addEventListener('click',openNav)
+navBox.addEventListener('click',openMenu)
+closeBtn.addEventListener('click',hideMenu)
 window.addEventListener('scroll',headerChange)
 dropdowns.forEach((dropdown)=>{
     dropdown.addEventListener('mouseover',function(e){

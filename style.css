@@ -13,6 +13,10 @@ ul,li{
 }
 :root{
     --point-color:#005bff;
+    --min-width:1440px;
+    --width-1024:1024px;
+    --width-768:768px;
+    --width-420:420px;
 }
 /* 헤더 */
 
@@ -87,9 +91,9 @@ footer .social i{
 
 @keyframes movearrow{
     from{
-        left: 0;
+        bottom: 0;
     }
     to{
-        left: 5px;
+        bottom: -20px;
     }
 }

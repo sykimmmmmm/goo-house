@@ -1,11 +1,13 @@
 body{
     background-color: antiquewhite;
+    overflow-x: hidden;
 }
 header{
     position: relative;
-    max-width: 100%;
-    width: 100%;
+    width: 100vw;
     height: 100px;
+    max-width: var(--min-width);
+    min-width: var(--min-width);
     position: fixed;
     top: 0;
     color: white;
@@ -17,13 +19,13 @@ header{
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
-    max-width: 1920px;
-    top: 0; left: 0;
-    width: 100%;
+    /* max-width: var(--min-width); */
+    min-width: var(--min-width);
+    top: 0; left: 0; right: 0;
     height: fit-content;
-    padding: 2vh 10vw;
+    padding: 2vh 5vw 2vh 5vw;
     background: rgba(0, 0, 0, .3);
 }
 .logo{
@@ -51,6 +53,7 @@ nav a{
 }
 nav>li{
     position: relative;
+    text-align: center;
 }
 nav>li>div{
     cursor: pointer;
@@ -64,37 +67,134 @@ nav>li .submenu{
     left: 0;
     display: none;
     animation: displaymenu 1s forwards;
-    background: rgba(0, 0, 0, .5);
-    border-collapse: collapse;
-    background-clip: border-box;
+    border-radius: 10px;
+    text-shadow: 1px 1px 2px black,
+    0 0 1em black,
+    0 0 0.3em black,
+    0 0 0.5em black;
 }
 .submenu a{
     font-size: 16px;
 }
 nav>li .submenu .submenu2{
-    /* position: absolute; */
     width: 100%;
-    /* left: 100%; */
     padding: 0;
     top: 10px;
     display: none;
     animation: displaymenu 1s forwards;
     text-align: center;
+    border-radius: 20px;
 }
 nav>li:hover .submenu{
     display: block;
+}
+nav>li:nth-child(2) .submenu{
+    left: -30px;
+}
+nav>li:nth-last-child(1) .submenu{
+    left: -50px;
+}
+.submenu2 a:hover{
+    color: var(--point-color);
 }
 nav i{
     position: relative;
     transition: .3s;
 }
 
+.menuicon{
+    font-size: 32px;
+    display: none;
+    cursor: pointer;
+}
+.navBox{
+    animation: displaymenu .7s ease-in-out forwards;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #000;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.navBox .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 50px;
+}
+.close-btn i{
+    font-size: 24px;
+    position: relative;
+}
+.navBox i{
+    transition: .4s;
+}
+.navBox .menu{
+    width: 100%;
+    height: 200px;
+    flex: 1;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navBox p{
+    margin: 0;
+}
+.navBox a{
+    color: white;
+}
+.navBox .title{
+    margin-top: 10px;
+}
+.navBox .info{
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+}
 
+
+#wrapper{
+    min-width: var(--min-width);
+    position: relative;
+}
+.scroll{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+    z-index: 2;
+    text-align: center;
+    text-shadow: 1px 1px 2px black,
+    0 0 0.3em black;
+    color: white;
+}
+.scroll p{
+    margin: 0;
+    margin-bottom: 5px;
+}
+.scroll i{
+    font-size: 28px;
+    position: relative;
+    transition: .5s;
+    animation: movearrow 1.2s infinite;
+}
 
 /* 특별 기획전 안내 */
 .spexhi{
     box-sizing: border-box;
     width: 100%;
+    min-width: var(--min-width);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -159,7 +259,7 @@ nav i{
 .collection{
     box-sizing: border-box;
     width: 100%;
-    max-width: 100%;
+    min-width: var(--min-width);
     overflow: hidden;
     height: 80vh;
     padding: 0 2vw;
@@ -180,7 +280,7 @@ nav i{
     position: absolute;
     color: #333;
     bottom: 0;
-    right: 40px;
+    right: 60px;
 }
 .collect-container{
     /* border: 1px solid red; */
@@ -228,6 +328,7 @@ nav i{
 
 /* 관람안내 */
 .operation{
+    min-width: var(--min-width);
     box-sizing: border-box;
     padding: 0 2vw;
     display: flex;
@@ -260,6 +361,8 @@ nav i{
 }
 .time p{
     font-size: 20px;
+    margin: 0;
+    margin-bottom: 10px;
 }
 .operation-img{
     width: 100%;
@@ -273,4 +376,265 @@ nav i{
 
 nav>li .submenu2.on{
     display: block;
+}
+
+
+@media (max-width:1200px) {
+    header{
+        max-width: var(--width-1024);
+    }
+    .header-bg{
+        max-width: var(--width-1024);
+        padding: 2vh 5vw;
+        gap: 80px;
+        align-items: center;
+        justify-content: start;
+    }
+    .header-bg .logo{
+        width: 200px;
+        background-position: center;
+        background-size:contain;
+    }
+    nav{
+        gap: 10px;
+    }
+    #wrapper{
+        max-width: var(--width-1024);
+        min-width: var(--width-1024);
+    }
+    .scroll{
+        right: 40px;
+    }
+    .mainSectSwiper{
+        max-width: var(--width-1024);
+    }
+    .mainSectSwiper .swiper-pagination-vertical{
+        width: 500px;
+    }
+    .spexhi{
+        max-width: var(--width-1024);
+        min-width: var(--width-1024);
+        height: 80vh;
+    }
+    .special-container .special-item{
+        width: 300px;
+    }
+    .special-container .special-item .special-img{
+        height: 300px;
+    }
+    .collection{
+        min-width: var(--width-1024);
+        max-width: var(--width-1024);
+        height: fit-content;
+        display: block;
+    }
+    .collect-container{
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-auto-rows: auto;
+    }
+    .operation{
+        max-width: var(--width-1024);
+        min-width: var(--width-1024);
+        padding: 0 5vw;
+    }
+    .operation-img .fa-clock{
+        font-size: 10rem;
+    }
+    footer{
+        min-width: var(--width-1024);
+        max-width: var(--width-1024);
+        justify-content: start;
+        gap: 340px;
+    }
+}
+@media (max-width:768px){
+    header{
+        max-width: var(--width-768);
+    }
+    .header-bg{
+        max-width: var(--width-768);
+        min-width: var(--width-768);
+        padding: 2vh 5vw;
+        gap: 450px;
+        align-items: center;
+    }
+    .header-bg .logo{
+        width: 200px;
+        background-position: center;
+        background-size:contain;
+    }
+    nav{
+        display: none;
+    }
+    .menuicon{
+        display: block;
+    }
+    .navBox{
+        top: 100px;
+    }
+    #wrapper{
+        max-width: var(--width-768);
+        min-width: var(--width-768);
+    }
+    .scroll{
+        right: 40px;
+    }
+    .mainSectSwiper{
+        max-width: var(--width-768);
+    }
+    .mainSectSwiper .swiper-pagination-vertical{
+        width: 500px;
+    }
+    .spexhi{
+        max-width: var(--width-768);
+        min-width: var(--width-768);
+        height: 80vh;
+    }
+    .special-container .special-item{
+        width: 300px;
+    }
+    .special-container .special-item .special-img{
+        height: 300px;
+    }
+    .collection{
+        min-width: var(--width-768);
+        max-width: var(--width-768);
+        height: fit-content;
+        display: block;
+    }
+    .collect-container{
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-auto-rows: auto;
+    }
+    .operation{
+        max-width: var(--width-768);
+        min-width: var(--width-768);
+        padding: 0 5vw;
+    }
+    .operation-img .fa-clock{
+        font-size: 10rem;
+    }
+    footer{
+        min-width: var(--width-768);
+        max-width: var(--width-768);
+        justify-content: start;
+        gap: 280px;
+    }
+    footer .address{
+        font-size: 8px;
+    }
+}
+@media (max-width:450px) {
+    header{
+        max-width: var(--width-420);
+    }
+    .header-bg{
+        max-width: var(--width-420);
+        min-width: var(--width-420);
+        padding: 2vh 5vw;
+        gap: 140px;
+        align-items: center;
+        justify-content: start;
+    }
+    .header-bg .logo{
+        width: 200px;
+        background-position: center;
+        background-size:contain;
+    }
+    nav{
+        display: none;
+    }
+    .menuicon{
+        display: block;
+    }
+    .navBox{
+        top: 0;
+        height: 100vh;
+    }
+    .navBox .close-btn{
+        display: block;
+    }
+    #wrapper{
+        max-width: var(--width-420);
+        min-width: var(--width-420);
+    }
+    .scroll{
+        right: -4px;
+    }
+    .mainSectSwiper{
+        max-width: var(--width-420);
+    }
+    .mainSectSwiper .swiper-pagination-vertical{
+        width: 500px;
+    }
+    .spexhi{
+        max-width: var(--width-420);
+        min-width: var(--width-420);
+        height: fit-content;
+        flex-direction: column;
+    }
+    .special-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .special-container .special-item{
+        width: 300px;
+    }
+    .special-container .special-item .special-img{
+        height: 300px;
+    }
+    .collection{
+        min-width: var(--width-420);
+        max-width: var(--width-420);
+        height: fit-content;
+        display: block;
+    }
+    .collect-container{
+        display: grid;
+        grid-template-columns: 300px;
+        grid-auto-rows: auto;
+    }
+    .collect-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .collect-item .collect-img{
+        width: 200px;
+        height: 200px;
+    }
+    .operation{
+        max-width: var(--width-420);
+        min-width: var(--width-420);
+        padding: 0 5vw;
+        flex-direction: column;
+    }
+    .op-container{
+        flex-direction: column;
+    }
+    .operation-img .fa-clock{
+        display: none;
+    }
+    footer{
+        min-width: var(--width-420);
+        max-width: var(--width-420);
+        justify-content: start;
+        gap: 5px;
+    }
+    footer .address{
+        font-size: 8px;
+    }
+    footer .social{
+        gap: 12px;
+    }
+}
+
+
+.header-bg .open{
+    display: flex;
+    animation: displaymenu .7s ease-in-out forwards;
 }
