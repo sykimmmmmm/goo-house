@@ -381,7 +381,8 @@ nav>li .submenu2.on{
 
 @media screen and (width<=1400px) {
     header{
-        max-width: var(--width-1024);
+        max-width: 1400px;
+        min-width: var(--width-1024);
     }
     .header-bg{
         padding: 2vh 5vw;
@@ -408,7 +409,7 @@ nav>li .submenu2.on{
         max-width: 1400px;
     }
     .scroll{
-        right: 40px;
+        right: 180px;
     }
     .mainSectSwiper .swiper-pagination-vertical{
         width: 500px;

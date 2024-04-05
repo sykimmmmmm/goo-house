@@ -15,8 +15,8 @@ ul,li{
     --point-color:#005bff;
     --min-width:1440px;
     --width-1024:1024px;
-    --width-768:768px;
-    --width-420:420px;
+    --width-768:786px;
+    --width-420:460px;
 }
 /* 헤더 */
 .navBox .info.open{
