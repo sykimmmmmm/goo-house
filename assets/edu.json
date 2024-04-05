@@ -1,0 +1,38 @@
+[
+    {"진행중":[
+        {
+            "title":"미술관 체험 프로그램<br>구하우스 탐색대",
+            "url":"/imgs/edu/edu1.jpg"
+        }
+        ]
+    },
+    {"끝":[
+        {
+            "title":"2020년 제3기<br>구하우스 아카데미",
+            "url":"/imgs/edu/academy3.jpg",
+            "date":"2020. 6. 2 - 2020. 10. 27"
+            
+        },
+        {
+            "title":"2019년 제2기 <br>구하우스 아카데미",
+            "url":"/imgs/edu/academy2.jpg",
+            "date":"2019. 4. 2 - 2019. 10. 29"
+        },
+        {
+            "title":"제1-2기 <br> 구하우스 아카데미",
+            "url":"/imgs/edu/academy1.jpg",
+            "date":"2018. 12. 4 - 2019. 4. 23"
+        },
+        {
+            "title":"제1-1기 <br> 구하우스 아카데미",
+            "url":"/imgs/edu/academy.jpg",
+            "date":"2018. 8. 7 - 10. 30"
+        },
+        {
+            "title":"꿈다락 토요문화학교",
+            "url":"/imgs/edu/school.jpg",
+            "date":"1기 : 2018. 8. 5 - 9. 9<br>2기 : 2018. 10. 7 - 11. 11"
+        }
+        ]
+    }
+]

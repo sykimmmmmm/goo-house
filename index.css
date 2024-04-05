@@ -379,14 +379,13 @@ nav>li .submenu2.on{
 }
 
 
-@media (max-width:1200px) {
+@media screen and (width<=1400px) {
     header{
         max-width: var(--width-1024);
     }
     .header-bg{
-        max-width: var(--width-1024);
         padding: 2vh 5vw;
-        gap: 80px;
+        gap: 180px;
         align-items: center;
         justify-content: start;
     }
@@ -396,23 +395,26 @@ nav>li .submenu2.on{
         background-size:contain;
     }
     nav{
-        gap: 10px;
+        gap: 30px;
     }
+    .submenu a{
+        font-size: 20px;
+    }
+    .submenu>li{
+        width: 200px;
+    }
+    
     #wrapper{
-        max-width: var(--width-1024);
-        min-width: var(--width-1024);
+        max-width: 1400px;
     }
     .scroll{
         right: 40px;
-    }
-    .mainSectSwiper{
-        max-width: var(--width-1024);
     }
     .mainSectSwiper .swiper-pagination-vertical{
         width: 500px;
     }
     .spexhi{
-        max-width: var(--width-1024);
+        max-width: 1400px;
         min-width: var(--width-1024);
         height: 80vh;
     }
@@ -424,7 +426,7 @@ nav>li .submenu2.on{
     }
     .collection{
         min-width: var(--width-1024);
-        max-width: var(--width-1024);
+        max-width: 1400px;
         height: fit-content;
         display: block;
     }
@@ -434,7 +436,7 @@ nav>li .submenu2.on{
         grid-auto-rows: auto;
     }
     .operation{
-        max-width: var(--width-1024);
+        max-width: 1400px;
         min-width: var(--width-1024);
         padding: 0 5vw;
     }
@@ -443,12 +445,12 @@ nav>li .submenu2.on{
     }
     footer{
         min-width: var(--width-1024);
-        max-width: var(--width-1024);
+        max-width: 1400px;
         justify-content: start;
         gap: 340px;
     }
 }
-@media (max-width:768px){
+@media screen and (width<=768px){
     header{
         max-width: var(--width-768);
     }
@@ -526,7 +528,7 @@ nav>li .submenu2.on{
         font-size: 8px;
     }
 }
-@media (max-width:450px) {
+@media screen and (width<=450px) {
     header{
         max-width: var(--width-420);
     }

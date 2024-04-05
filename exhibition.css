@@ -545,10 +545,10 @@ nav>li:hover .submenu>li .submenu2>li:hover>a{
     justify-content: space-between;
     align-items: center;
 }
-.swiper-pagination{
-    width: 100px !important;
-    bottom: 230px !important;
-    left: 240px !important;
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+    width: 100px ;
+    bottom: 150px;
+    left: 340px;
 }
 .swiper-pagination-bullet-active{
     background-color: var(--point-color);
@@ -557,7 +557,7 @@ nav>li:hover .submenu>li .submenu2>li:hover>a{
     flex: none;
     margin-top: 50px;
     min-width: 600px;
-    min-height: 600px;
+    min-height: 890px;
     /* background: url(/imgs/gate-small.jpg) no-repeat; */
     background-size: contain;
     /* border: 1px solid red; */
@@ -612,8 +612,8 @@ nav>li:hover .submenu>li .submenu2>li:hover>a{
 
 .close-btn2{
     position: absolute;
-    top: 20px;
-    right: 35px;
+    top: 25px;
+    right: 60px;
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -633,7 +633,7 @@ footer{
     animation: displaymenu .7s ease-in-out forwards;
 }
 
-@media (max-width:1200px){
+@media screen and  (width<=1400px){
     header{
         min-width: var(--width-1024);
     }
@@ -675,6 +675,10 @@ footer{
     }
     .wrapper{
         min-width: var(--width-1024);
+        margin-top: -30vh;
+    }
+    .navigation{
+        top: 350px;
     }
     .page-view{
         min-width: var(--width-1024);
@@ -684,41 +688,45 @@ footer{
         width: 50%;
     }
     .page-map .map{
-        height: 300px;
+        height: 400px;
         width: 100px;
         min-width: var(--width-1024);
         background-position: 0;
     }
+    .circle{
+        width: 15px;
+        height: 15px;
+    }
     .page-map .map .living{
-        left: 100px;
-        top: 100px;
+        left: 130px;
+        top: 140px;
     }
     .map .jean-prouve{
-        left: 180px;
-        top: 80px;
+        left: 240px;
+        top: 100px;
     }
     .map .library{
-        left: 170px;
-        top:130px;
+        left: 230px;
+        top:170px;
     }
     .map .corrido{
-        left: 280px;
-        top: 185px;
+        left: 370px;
+        top: 250px;
     }
     .map .front{
-        left: 355px;
-        top: 210px;
+        left: 460px;
+        top: 290px;
     }
     .front::before{
         left: -300%;
     }
     .map .lounge{
-        left: 420px;
-        top: 110px;
+        left: 570px;
+        top: 150px;
     }
     .map .cloak{
-        left: 460px;
-        top: 145px;
+        left: 620px;
+        top: 190px;
     }
     .map .cloak::before{
         left: -90%;
@@ -726,6 +734,7 @@ footer{
     .section{
         min-width: var(--width-1024);
         padding: 0 5vw;
+        margin-top: -20vh;
     }
     .art-container{
         grid-template-columns: repeat(4,calc(80%/4));
@@ -737,6 +746,7 @@ footer{
     .modal-imgbox{
         margin-left: 10px;
         gap: 40px;
+        justify-content: center;
     }
     .modal-img{
         min-width: 400px;
@@ -751,11 +761,14 @@ footer{
         justify-content: start;
         gap: 20px;
     }
+    .modal-desc>p{
+        margin-top: 25vh;
+    }
     .modal-item-desc>p{
-        font-size: 14px;
+        font-size: 20px;
     }
     .modal-item-desc>p:nth-of-type(2){
-        font-size: 12px;
+        font-size: 14px;
     }
     .modal-item-desc>p:nth-of-type(3){
         font-size: 12px;
@@ -775,8 +788,14 @@ footer{
     .author-desc>p{
         font-size: 12px;
     }
+    .close-btn2{
+        top: 50px;
+    }
+    .close-btn2 i{
+        font-size: 60px;
+    }
 }
-@media (max-width:786px){
+@media screen and (width<=786px){
     header{
         min-width: var(--width-786);
         height: 15vh;
@@ -811,6 +830,7 @@ footer{
     .wrapper{
         min-width: var(--width-786);
         height: 60vh;
+        margin-top: 0;
     }
     .navigation{
         display: none;
@@ -836,6 +856,10 @@ footer{
     .page-map .map{
         height: 390px;
         width: 100%;
+    }
+    .circle{
+        width: 10px;
+        height: 10px;
     }
     .page-map .map .living{
         left: 130px;
@@ -874,6 +898,7 @@ footer{
     .section{
         min-width: var(--width-786);
         padding: 0 5vw;
+        margin-top: 0;
     }
     .art-container{
         grid-template-columns: repeat(4,calc(80%/4));
@@ -885,6 +910,7 @@ footer{
     .modal-imgbox{
         margin-left: 10px;
         gap: 0px;
+        justify-content: start;
     }
     .modal-img{
         min-width: 373px;
@@ -898,6 +924,9 @@ footer{
         width: 300px;
         justify-content: start;
         gap: 20px;
+    }
+    .modal-desc>p{
+        margin-top: 10px;
     }
     .modal-item-desc>p{
         font-size: 14px;
@@ -923,9 +952,16 @@ footer{
     .author-desc>p{
         font-size: 12px;
     }
+    .close-btn2{
+        top: 26px;
+        right: 10px;
+    }
+    .close-btn2 i{
+        font-size: 30px;
+    }
 }
 
-@media (max-width:450px){
+@media screen and (width<=450px){
     header{
         min-width: var(--width-420);
         height: 15vh;
@@ -1106,6 +1142,7 @@ footer{
     .close-btn2{
         width: 15px;
         height: 15px;
+        z-index: 10;
     }
     .close-btn2 i{
         font-size: 20px;

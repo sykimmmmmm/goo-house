@@ -1,12 +1,8 @@
 const dropdowns = document.querySelectorAll('.submenu>li>a')
-const menus = document.querySelectorAll('.submenu2')
-const header = document.querySelector('.header-bg')
+const menus2 = document.querySelectorAll('.submenu2')
 const submenus = document.querySelectorAll('.submenu')
 const wrapper = document.getElementById('wrapper')
-const menuicon = document.querySelector('.menuicon')
-const navBox = document.querySelector('.navBox')
-const closeBtn = navBox.querySelector('.close-btn')
-const nav = header.querySelectorAll('nav>li ul')
+const nav = headerBg.querySelectorAll('nav>li ul')
 /** 반응형 서브메뉴 아코디언형식  */
 function openMenu(e){
     let x = e.target
@@ -65,20 +61,20 @@ function mainSectSwiper(){
 }
 createImg()
 mainSectSwiper()
-const sec1 = document.querySelector('.spexhi')
+const spexhi = document.querySelector('.spexhi')
 
 /** 슬라이더이후 헤더 색 변환  */
 function headerChange(){
-    let x = sec1.getBoundingClientRect()
+    let x = spexhi.getBoundingClientRect()
 
     if(x.top<=0){
-        header.style.background='rgba(0,0,0,1)' 
+        headerBg.style.background='rgba(0,0,0,1)' 
         for(let i of nav){
             i.style.background='rgba(0,0,0,1)'
         }
 
     }else{
-        header.style.background='rgba(0,0,0,.5)'
+        headerBg.style.background='rgba(0,0,0,.5)'
         for(let i of nav){
             i.style.background=''
         }
@@ -102,7 +98,7 @@ dropdowns.forEach((dropdown)=>{
 
 submenus.forEach((submenu)=>{
     submenu.addEventListener('mouseleave',function(){
-        menus.forEach((x)=>{
+        menus2.forEach((x)=>{
             let b = submenu.querySelectorAll('i')
             b.forEach((i)=>{
                 i.style.transform='rotate(0deg)'

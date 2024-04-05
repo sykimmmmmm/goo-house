@@ -1,5 +1,5 @@
 html,body{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     background-color: antiquewhite;
 }
 header{
@@ -34,7 +34,7 @@ header{
 nav{
     flex: 1;
     display: flex;
-    font-size: 18px;
+    font-size: 25px;
     text-transform: uppercase;
     font-weight: bold;
     gap: 40px;
@@ -241,15 +241,14 @@ nav>li:hover .submenu>li .submenu2>li:hover>a{
     margin-top: 5vh;
     box-sizing: border-box;
     padding: 0 5vw;
-    height: 100vh;
+    height: fit-content;
     position: relative;
-    border: 1px solid red;
 }
 .navigation{
     min-width: 300px;
     position: absolute;
     width: fit-content;
-    top: 80px;
+    top: -180px;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -257,7 +256,7 @@ nav>li:hover .submenu>li .submenu2>li:hover>a{
 }
 .navigation span a{
     letter-spacing: 1px;
-    font-size: 12px;
+    font-size: 16px;
     color: #888;
     margin-right: 5px;
 }
@@ -273,13 +272,304 @@ nav>li:hover .submenu>li .submenu2>li:hover>a{
 
 aside{
     font-size: 2rem;
-    margin-top: 180px;
     position: sticky;
-    top: 0;
+    left: 100px;
+    top: 150px;
     width: fit-content;
 }
 .education-container{
     box-sizing: border-box;
-    border: 1px solid red;
-    padding-left: 180px;
+    padding-left: 250px;
+    margin-bottom: 10vh;
+}
+.education-container>div>p{
+    font-size: 24px;
+}
+.education-container>div{
+    overflow: hidden;
+    height: 55vh;
+}
+.slide-container{
+    position: relative;
+}
+.edu-slide{
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.edu-img{
+    width: 290px;
+    height: 400px;
+    cursor: pointer;
+}
+.edu-img.img{
+    background: url(/imgs/edu/edu1.jpg) no-repeat;
+    background-size: contain;
+}
+.edu-img.img1{
+    background: url(/imgs/edu/academy3.jpg) no-repeat;
+    background-size: contain;
+}
+.edu-img.img2{
+    background: url(/imgs/edu/academy2.jpg) no-repeat;
+    background-size: contain;
+}
+.edu-img.img3{
+    background: url(/imgs/edu/academy1.jpg) no-repeat;
+    background-size: contain;
+}
+.edu-img.img4{
+    background: url(/imgs/edu/edu2.jpg) no-repeat;
+    background-size: contain;
+}
+.edu-img.img5{
+    background: url(/imgs/edu/academy.jpg) no-repeat;
+    background-size: contain;
+}
+.edu-img.img6{
+    background: url(/imgs/edu/school.jpg) no-repeat;
+    background-size: contain;
+}
+.edu-slide>p{
+    text-align: center;
+    font-size: 20px;    
+}
+.edu-slide>p:nth-of-type(2){
+    margin:0
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40px;
+}
+.swiper-button-next,.swiper-button-prev{
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--point-color);
+}
+.swiper-pagination-bullet-active{
+    background: var(--point-color);
+}
+.bigPictureWrapper {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top:0%;
+    width:100%;
+    height:100%;
+    background-color: gray; 
+    z-index: 100;
+    background:rgba(0,0,0,0.5);
+}
+.bigPicture {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+
+
+@media screen and  (max-width:1400px){
+    header{
+        min-width: var(--width-1024);
+    }
+    .header-bg{
+        margin: 0;
+        margin-top: 2vh;
+        padding-left: 5vw;
+        gap: 40px;
+    }
+    .header-bg .logo{
+        width: 200px;
+        min-width: 200px;
+        background-position: center;
+    }
+    .header-bg >nav>li:nth-last-child(1)>ul{
+        left: -100px;
+    }
+    .header-small{
+        min-width: var(--width-1024);
+    }
+    .header-small .small-logo{
+        min-width: 200px;
+        width: 200px;
+        height: 70px;
+    }
+    .header-small nav{
+        height: 70px;
+    }
+    .header-small nav>ul{
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+        padding: 0;
+        margin-left: -50px;
+    }
+    .header-small nav>ul>li>ul {
+        font-size: 14px;
+    }
+    .header-small nav>ul>li:nth-child(2)>ul{
+        left: -26px;
+    }
+    nav{
+        font-size: 18px;
+    }
+    .education-container>div{
+        height: 44vh;
+    }
+    aside{
+        left: 0;
+        margin-left: 5vw;
+    }
+    .wrapper{
+        min-width: var(--width-1024);
+        margin-top: -10vh;
+    }
+    .swiper-button-prev{
+        left: 250px;
+        top: 585px;
+    }
+    .swiper-button-next{
+        top: 585px;
+        right: 250px;
+    }
+    .swiper-button-prev::after,.swiper-button-next::after{
+        font-size: 20px;
+    }
+    .bigPicture{
+        width: 100%;
+    }
+}
+@media screen and (width<=1200px) {
+    .education-container>div{
+        height: 86vh;
+    }
+    .navigation{
+        top: -30px;
+    }
+}
+@media screen and  (width<=786px){
+    header{
+        min-width: var(--width-786);
+        height: 15vh;
+    }
+    .header-bg{
+        position: fixed;
+        margin: 0;
+        top: 0;
+        z-index: 100;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        gap: 30px;
+        width: 100%;
+    }
+    .header-bg>a{
+        flex: none;
+    }
+    .header-bg .logo{
+        width: 200px;
+        min-width: 200px;
+        background-position: center;
+    }
+    .header-bg>nav{
+        display: none;
+    }
+    .menuicon{
+        display: block;
+    }
+    .header-small{
+        display: none !important;
+    }
+    aside{
+        position: static;
+    }
+    .navigation{
+        display: none;
+    }
+    .education-container>div{
+        height: 70vh;
+    }
+    .wrapper{
+        min-width: var(--width-786);
+        margin-top: 0;
+    }
+    .education-container{
+        padding-left: 10px;
+    }
+    .swiper-button-next{
+        right: 140px;
+    }
+    .swiper-button-prev{
+        left: 140px;
+    }
+    .bigPicture{
+        width: 100%;
+    }
+}
+
+@media screen and  (width<=450px){
+    header{
+        min-width: var(--width-420);
+        height: 15vh;
+    }
+    .header-bg{
+        position: fixed;
+        margin: 0;
+        top: 0;
+        z-index: 100;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        gap: 30px;
+        width: 100%;
+    }
+    .header-bg>a{
+        flex: none;
+    }
+    .header-bg .logo{
+        width: 200px;
+        min-width: 200px;
+        background-position: center;
+    }
+    .header-bg>nav{
+        display: none;
+    }
+    .menuicon{
+        display: block;
+    }
+    .navBox{
+        height: 100vh;
+    }
+    .header-small{
+        display: none !important;
+    }   
+    .education-container>div{
+        height: 73vh;
+    }
+    footer .address{
+        font-size: 8px;
+    }
+    .wrapper{
+        min-width: var(--width-420);
+    }
+    .education-container{
+        padding: 0;
+    }
+    .swiper-button-next{
+        right: 110px;
+    }
+    .swiper-button-prev{
+        left: 100px;
+    }
+    aside{
+        position: static;
+    }
 }

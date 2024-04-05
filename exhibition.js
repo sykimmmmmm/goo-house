@@ -1,85 +1,5 @@
-const header = document.querySelector('.header-small')
-const menus = document.querySelectorAll('.header-small>nav>ul>li>a')
-const headerBg = document.querySelector('.header-bg')
-const sec1 = document.querySelector('.navigation')
 const artContainer = document.querySelector('.art-container')
 const modalContainer = document.querySelector('.modal')
-const menuicon = document.querySelector('.menuicon')
-const navBox = document.querySelector('.navBox')
-const closeBtn = navBox.querySelector('.close-btn')
-function displaySubmenu(e){
-    header.style.height='170px'
-}
-function removeSubmenu(){
-    header.style.height=''
-}
-
-function headerBackground(e){
-    let a = headerBg.getBoundingClientRect()
-    if(a.top===0){
-        headerBg.style.background='white'
-    }
-    if(document.documentElement.scrollTop===0){
-        headerBg.style.background=''
-    }
-}
-
-/** 서브네비게이션 출력  */
-function displaySubheader(){
-    let s = sec1.getBoundingClientRect().top
-    if(s<2){
-        header.style.display="flex"
-    }
-    else{
-        header.style.display='none'
-    }
-}
-
-function openMenu(e){
-    let x = e.target
-    let y = e.target.nextElementSibling
-    const icon = e.target.querySelector('i')
-    if(x.classList.contains('title')){
-        y.classList.toggle('open')
-        icon.style.transform='rotate(90deg)'
-    }
-    if(x.classList.contains('title')&&!y.classList.contains('open')){
-        icon.style.transform='rotate(0deg)'
-    }
-}
-
-function hideMenu(){
-    navBox.style.display='none'
-    document.documentElement.style.overflowY='auto'
-}
-
-function openNav(e){
-    navBox.style.display='flex'
-    if(document.documentElement.clientWidth<450){
-        e.stopPropagation()
-        document.documentElement.style.overflowY='hidden'
-    }
-}
-/** 1400px이하 반응형일때 최종뎁스만 링크 */
-function clickMenu(){
-    if(document.documentElement.clientWidth<1440){
-        const menus = headerBg.querySelectorAll('li>a')
-        const menus2 = header.querySelectorAll('li>a')
-        menus.forEach((menu)=>{
-            let a = menu.nextElementSibling
-            if(a){
-                menu.href='#none'
-            }
-        })
-        menus2.forEach((menu)=>{
-            let a = menu.nextElementSibling
-            if(a){
-                menu.href='#none'
-            }
-        })
-    }
-}
-
 
 /** 전시작품 생성  */
 function createArtItem(item,index){
@@ -177,7 +97,7 @@ function createModalItem(item,index){
 
 function modalSwiper(){
     let modal = new Swiper('.modalSwiper',{
-        loop:true,
+        loop:false,
         allowTouchMove:false,
         pagination:{
             el:'.swiper-pagination',
@@ -191,12 +111,7 @@ function closeModal(){
     document.documentElement.style.overflowY='auto'
 }
 
-menus.forEach((item)=>{
-    item.addEventListener('mouseover',displaySubmenu)
-})
-header.addEventListener('mouseleave',removeSubmenu)
 
-window.addEventListener('scroll',displaySubheader)
 window.addEventListener('load',function(){
     loadJson("/assets/frontroom.json")
     .then((date)=>{
@@ -220,9 +135,3 @@ window.addEventListener('load',function(){
     })
 })
 
-
-clickMenu()
-menuicon.addEventListener('click',openNav)
-navBox.addEventListener('click',openMenu)
-closeBtn.addEventListener('click',hideMenu)
-window.addEventListener('scroll',headerBackground)

@@ -19,7 +19,9 @@ ul,li{
     --width-420:420px;
 }
 /* 헤더 */
-
+.navBox .info.open{
+    display: flex;
+}
 
 /* 슬라이드 백그라운드 */
 #wrapper{
