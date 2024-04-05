@@ -8,7 +8,7 @@ function openMenu(e){
     let x = e.target
     let y = e.target.nextElementSibling
     const icon = e.target.querySelector('i')
-    console.log(icon)
+    // console.log(icon)
     if(x.classList.contains('title')){
         y.classList.toggle('open')
         icon.style.transform='rotate(90deg)'
@@ -80,9 +80,6 @@ function headerChange(){
         }
     }
 }
-menuicon.addEventListener('click',openNav)
-navBox.addEventListener('click',openMenu)
-closeBtn.addEventListener('click',hideMenu)
 window.addEventListener('scroll',headerChange)
 dropdowns.forEach((dropdown)=>{
     dropdown.addEventListener('mouseover',function(e){

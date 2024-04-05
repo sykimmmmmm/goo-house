@@ -19,7 +19,7 @@ ul,li{
     --width-420:460px;
 }
 /* 헤더 */
-.navBox .info.open{
+.info.open{
     display: flex;
 }
 
