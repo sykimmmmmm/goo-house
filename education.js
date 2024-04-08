@@ -2,7 +2,7 @@ const eduImgs = document.querySelectorAll('.edu-img')
 const bigPicture = document.querySelector('.bigPicture')
 const bigPictureWrapper = document.querySelector('.bigPictureWrapper')
 
-
+/** 프로그램 이미지 클릭시 풀스크린  */
 function fullscreen(){
     let x = window.getComputedStyle(this).background
     bigPicture.parentElement.style.display='flex'

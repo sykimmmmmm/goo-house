@@ -10,6 +10,7 @@ function loadJson(url){
     return fetch(url).then(response => response.json())
 }
 
+/* 헤더 관련  */
 function displaySubmenu(e){
     header.style.height='170px'
 }
@@ -41,6 +42,7 @@ function displaySubheader(){
     }
 }
 
+/** 반응형 서브메뉴 아코디언형식  */
 function openMenu(e){
     let x = e.target
     let y = e.target.nextElementSibling

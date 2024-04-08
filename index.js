@@ -3,28 +3,7 @@ const menus2 = document.querySelectorAll('.submenu2')
 const submenus = document.querySelectorAll('.submenu')
 const wrapper = document.getElementById('wrapper')
 const nav = headerBg.querySelectorAll('nav>li ul')
-/** 반응형 서브메뉴 아코디언형식  */
-function openMenu(e){
-    let x = e.target
-    let y = e.target.nextElementSibling
-    const icon = e.target.querySelector('i')
-    // console.log(icon)
-    if(x.classList.contains('title')){
-        y.classList.toggle('open')
-        icon.style.transform='rotate(90deg)'
-    }
-    if(x.classList.contains('title')&&!y.classList.contains('open')){
-        icon.style.transform='rotate(0deg)'
-    }
-}
 
-function hideMenu(){
-    navBox.style.display='none'
-}
-
-function openNav(e){
-    navBox.style.display='flex'
-}
 
 /** 메인화면 스와이퍼 이미지 생성 */
 function createImg(){

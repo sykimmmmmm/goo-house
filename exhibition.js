@@ -124,8 +124,6 @@ window.addEventListener('load',function(){
                 modalContainer.innerHTML=''
                 createModalItem(date[e.target.index],e.target.index)
                 const closeBtn = document.querySelector('.close-btn2')
-                // const artModal = document.querySelector('.art-modal')
-                // artModal.addEventListener('click',closeModal)
                 closeBtn.addEventListener('click',closeModal)
             }
             modalContainer.style.display='block'            

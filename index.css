@@ -451,7 +451,7 @@ nav>li .submenu2.on{
         gap: 340px;
     }
 }
-@media screen and (width<=768px){
+@media screen and (width<=786px){
     header{
         max-width: var(--width-768);
     }
@@ -459,7 +459,7 @@ nav>li .submenu2.on{
         max-width: var(--width-768);
         min-width: var(--width-768);
         padding: 2vh 5vw;
-        gap: 450px;
+        gap: 180px;
         align-items: center;
     }
     .header-bg .logo{
@@ -494,6 +494,9 @@ nav>li .submenu2.on{
         min-width: var(--width-768);
         height: 80vh;
     }
+    .special-container{
+        flex-direction: column;
+    }
     .special-container .special-item{
         width: 300px;
     }
@@ -508,7 +511,7 @@ nav>li .submenu2.on{
     }
     .collect-container{
         display: grid;
-        grid-template-columns: 300px 300px;
+        grid-template-columns: 300px;
         grid-auto-rows: auto;
     }
     .operation{
